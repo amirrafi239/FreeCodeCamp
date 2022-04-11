@@ -1,0 +1,54 @@
+create database Task_2
+
+create table tab1
+(
+SID int identity(1,1) primary key,
+FName varchar(50) not null,
+LName varchar(50) not null,
+Age int not null,
+Grade varchar(50) null,
+"Phone Number" varchar(50) null,
+)
+
+
+insert into tab1 values('Ovi', 'Majumdar',22,'1.25','0123')
+insert into tab1 values('Akash', 'Pathan',21,'2.22','6541')
+insert into tab1 values('Raja', 'Tushar',24,'','6548')
+insert into tab1 values('Ovi', 'Majumdar',26,'1.21','1324')
+insert into tab1 values('Rubaiya', 'Hafiz',24,'0.88','9546')
+insert into tab1 values('Sazzad', 'Pinku',28,'4.00','3598')
+insert into tab1 values('Sazzad', 'Pinku',30,'0.25','')
+
+select * from tab1
+
+/*1. Select all FName but similar names cannot be shown twice.*/
+
+select distinct FName from tab1;
+
+
+/*2. Select all SID, FName and Grade of those people who is older than 25 years and phone number ends with 8.*/
+
+select SID,FName,Grade from tab1 where Age>25 AND "Phone Number" like '___8%'
+
+
+/*3. Select all the FName and Age. But show according to their age starting from younger to older.*/
+
+select FName,Age from tab1 order by Age ASC;
+
+
+/*4. Select all the FName and Age. But show according to their age starting from older to younger.*/
+
+select FName,Age from tab1 order by Age DESC;
+
+
+/*5. Delete Ovi from the table. Describe what happened.*/
+
+delete from tab1 where FName = 'Ovi';
+	/*Where it'll find out 'Ovi' in the FName column, this will delete the values of that rows .*/
+select * from tab1
+
+
+
+/*6. Select all FName whose age is between 23 to 30.*/
+
+select FName from tab1 where Age between 23 AND 30;

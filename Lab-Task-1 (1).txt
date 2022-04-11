@@ -1,0 +1,48 @@
+
+create database Task_1
+
+/*1. Create a table with the given values. Suppose the name of the table is “Malaysia”.*/
+
+create table Malaysia
+(
+SID int identity(1,1) primary key,
+FName varchar(50) not null,
+LName varchar(50) null,
+Age int not null,
+Grade varchar(50) null,
+[Phone Number] varchar(50) null,
+)
+
+insert into Malaysia values('Ovi', 'Majumdar',22,'1.25','0123')
+insert into Malaysia values('Akash', 'Pathan',21,'2.22','6541')
+insert into Malaysia values('Raja', 'Tushar',24,'','6548')
+insert into Malaysia values('Nusrat', 'Jahan',26,'1.21','1324')
+insert into Malaysia values('Rubaiya', 'Hafiz',24,'0.88','9546')
+insert into Malaysia values('Sazzad', '',28,'4.00','3598')
+insert into Malaysia values('Nag', 'Pinku',30,'0.25','')
+
+select * from Malaysia
+
+/*2. As you can see that some the columns are empty in the table, now I do not want to allow 
+NUL values like those. How to do that?*/
+
+Alter table Malaysia
+Alter column LName varchar(50) NOT NULL;
+
+Alter table Malaysia
+Alter column Grade varchar(50) NOT NULL;
+
+Alter table Malaysia
+Alter column [Phone Number] varchar(50) NOT NULL;
+
+select * from Malaysia
+
+
+/*3. How to delete all the tuples from the table ?*/
+
+Delete from Malaysia;
+
+
+/*4. How to delete the Full table?*/
+
+Drop table Malaysia;
